@@ -16,13 +16,13 @@ public class JavalinSingleton {
     public static Javalin getInstance(){
         Javalin app = Javalin.create();
 
-        app.get("/firstname/{first}", ctx -> {
+        return app.get("/firstname/{first}", ctx ->{ 
             
-            //write code here
-
+            String first = ctx.pathParam("first");
+            ctx.result(first);
+            
         });
-
-        return app;
+        
     }
     
 }
